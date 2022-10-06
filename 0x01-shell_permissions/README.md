@@ -2,4 +2,5 @@
 1-who_am_i : view logged in user
 2-groups : view current user groups
 3-new_owner : change file owner
-4-empty : create an empty hello file 
+4-empty : create an empty hello file
+5-execute : adds execute permission to the owner 
