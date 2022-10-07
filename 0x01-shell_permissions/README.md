@@ -9,3 +9,4 @@
 8-James_Bond : all permission to others but no permission to user and group
 9-John_Doe : changing permissions
 10-mirror_permissions : reference permissions from another file
+11-directories_permissions : subdirectory permissions
