@@ -8,3 +8,4 @@
 7-everbody :  adds execution permission to the owner, the group owner and the other users 
 8-James_Bond : all permission to others but no permission to user and group
 9-John_Doe : changing permissions
+10-mirror_permissions : reference permissions from another file
