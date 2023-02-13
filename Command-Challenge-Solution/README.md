@@ -132,49 +132,49 @@ Note that some files are in subdirectories so you will need to search for them.
 [![](https://cmdchallenge.com/img/emojis/1F439.png)]()
 #### Level 32. Print the file faces.txt, but only print the first instance of each duplicate line, even if the duplicates don’t appear next to each other.
 Note that order matters so don’t sort the lines before removing duplicates.
-awk '!c[$0]++' faces.txt
+> `awk '!c[$0]++' faces.txt`
 
 [![](https://cmdchallenge.com/img/emojis/1F43B.png)]()
 #### Level 33. The file random-numbers.txt contains a list of 100 random integers. Print the number of unique prime numbers contained in the file.
-cat random-numbers.txt | sort|uniq | factor | awk 'NF==2'| wc -l
+> `cat random-numbers.txt | sort|uniq | factor | awk 'NF==2'| wc -l`
 
 [![](https://cmdchallenge.com/img/emojis/1F43C.png)]()
 #### Level 34. access.log.1 and access.log.2 are http server logs.
 Print the IP addresses common to both files, one per line.
-awk 's[$1]++{print $1}' access.log*
+> `awk 's[$1]++{print $1}' access.log*`
 
 [![](https://cmdchallenge.com/img/emojis/1F423.png)]()
 #### Level 35. Print all matching lines (without the filename or the file path) in all files under the current directory that start with “access.log”, where the next line contains the string “404”.
 Note that you will need to search recursively.
-grep -h -B1 404 **/access.log*|grep -vE '404|--'
+> `grep -h -B1 404 **/access.log*|grep -vE '404|--'`
 
 [![](https://cmdchallenge.com/img/emojis/1F99A.png)]()
 #### Level 36. Print all files with a .bin extension in the current directory that are different than the file named base.bin.
-for f in t*; do cmp -s bas* $f || echo $f; done
+> `for f in t*; do cmp -s bas* $f || echo $f; done`
 
 [![](https://cmdchallenge.com/img/emojis/1F438.png)]()
 #### Level 37. There is a file: ./.../ /. .the flag.txt
 Show its contents on the screen.
-cat './.../  /. .the flag.txt'
+> `cat './.../  /. .the flag.txt'`
 
 [![](https://cmdchallenge.com/img/emojis/1F432.png)]()
 #### Level 38. How many lines contain tab characters in the file named file-with-tabs.txt in the current directory.
-grep -P "\t" * | wc -l
+> `grep -P "\t" * | wc -l`
 
 [![](https://cmdchallenge.com/img/emojis/1F338.png)]()
 #### Level 39. There are files in this challenge with different file extensions.
 Remove all files without the .txt and .exe extensions recursively in the current working directory.
-find -type f ! -regex '.*\(exe\|txt\)$' -delete
+> `find -type f ! -regex '.*\(exe\|txt\)$' -delete`
 
 [![](https://cmdchallenge.com/img/emojis/1F339.png)]()
 #### Level 40. There are some files in this directory that start with a dash in the filename. Remove those files.
-rm ./-*
+> `rm ./-*`
 
 [![](https://cmdchallenge.com/img/emojis/1F33A.png)]()
 #### Level 41. There are two files in this directory, ps-ef1 and ps-ef2. Print the contents of both files sorted by PID and delete repeated lines.
-cat ps-* | sort -k2 -n |uniq
+> `cat ps-* | sort -k2 -n |uniq`
 
 [![](https://cmdchallenge.com/img/emojis/1F33B.png)]()
 #### Level 42. In the current directory there is a file called netstat.out.
 Print all the IPv4 listening ports sorted from the higher to lower.
-grep "\bLISTEN\b" netstat.out|grep -oP "tcp\s+.*:\K\d+"|sort -nr
+> `grep "\bLISTEN\b" netstat.out|grep -oP "tcp\s+.*:\K\d+"|sort -nr`
